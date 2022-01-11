@@ -23,7 +23,7 @@ function App() {
         files.forEach((file, i) => {
             const formData = new FormData()
             formData.append(`file${i}`, file)
-            console.log(formData)
+            console.log(...formData.values())
             // send formData
         })
 
@@ -34,7 +34,7 @@ function App() {
     const inputHandler = (e) => {
         e.preventDefault()
         const formData = new FormData(e.target)
-        console.log(formData.get('file'))
+        console.log(...formData.values())
         // send formData
     }
 
@@ -53,9 +53,9 @@ function App() {
                         onDragLeave={dragLeaveHandler}
                         onDragStart={dragStartHandler} >
                         Перемести файл сюда<br/>
-                        <form action="post" onSubmit={inputHandler}>
-                            <label htmlFor="file">Choose images to upload (TXT, PDF)</label>
-                            <input type="file" accept=".txt" id="file" name="file"/>
+                        <form onSubmit={inputHandler}>
+                            <label htmlFor="file">Choose images to upload (TXT, PDF, JPG, PNG, WORD)</label>
+                            <input multiple type="file" accept=".pdf, .word, .jpg, .png" id="file" name="file"/>
                             <button>Send</button>
                         </form>
                     </div>}
