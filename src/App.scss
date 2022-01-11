@@ -1,0 +1,30 @@
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.drop-area {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px dashed cornflowerblue;
+    flex-direction: column;
+}
+
+.drop {
+    border: 5px solid blueviolet;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    * {
+        padding: 15px;
+    }
+}
